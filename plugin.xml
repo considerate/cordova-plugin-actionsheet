@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="nl.x-services.plugins.actionsheet"
+        id="se.considerate.plugins.actionsheet"
         version="0.0.1">
 
   <name>ActionSheet</name>
@@ -18,6 +18,17 @@
   <js-module src="www/ActionSheet.js" name="ActionSheet">
     <clobbers target="window.plugins.actionsheet" />
   </js-module>
+
+  <!-- android -->
+  <platform name="android">
+    
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="ActionSheet">
+        <param name="android-package" value="se.considerate.plugins.actionsheet.ActionSheet" />
+      </feature>
+    </config-file>
+    <source-file src="src/android/ActionSheet.java" target-dir="src/se/considerate/plugins/actionsheet" />
+  </platform>
 
   <!-- ios -->
   <platform name="ios">
